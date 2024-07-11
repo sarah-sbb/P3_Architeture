@@ -40,13 +40,13 @@ export function createProjectCard(project) {
     const workCard = document.createElement("figure");
     const workImage = document.createElement("img");
     const workTitle = document.createElement("figcaption");
-    const trashCan = document.createElement("i");
+    // const trashCan = document.createElement("i");
     
     workImage.src = project.imageUrl;
     workImage.alt = project.title;
     workTitle.innerText = project.title;
     workCard.dataset.id = project.id;
-    workCard.dataset.category = project.category.name;
+    // workCard.dataset.category = project.category.name;
     workCard.className = "workCard";
 
     // Configuration de l'icône de suppression

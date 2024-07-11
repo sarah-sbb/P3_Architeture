@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateModalContent();
         }
 
-        event.preventDefault();
+        // event.preventDefault();
 
         const modalContent = document.getElementById('modalGallery');
         const modalForm = document.getElementById('modalForm');
@@ -137,7 +137,7 @@ export function createModalProjectCard(project) {
 
     workImage.src = project.imageUrl;
     workGalleryCard.dataset.id = project.id;
-    workGalleryCard.dataset.category = project.category.name;
+    // workGalleryCard.dataset.category = project.category.name;
     workGalleryCard.className = "workGalleryCard";
 
     trashCan.classList.add("fa-solid", "fa-trash-can", "trash-icon");
@@ -250,7 +250,7 @@ async function loadPhotoForm() {
             try {
                 const newProject = await createNewProject(formData);
                 addProjectToGallery(newProject); // Ajouter la nouvelle carte de projet à la galerie principale
-                closeModal(event); // Fermer la modale après soumission
+                // closeModal(event); // Fermer la modale après soumission
             } catch (error) {
                 console.error('Error creating new project:', error);
             }
