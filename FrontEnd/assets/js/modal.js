@@ -9,6 +9,7 @@ export function initModal() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const openModalButton = document.getElementById('openModal');
+    const openModalButton2 = document.getElementById('openModal2');
     const modal = document.getElementById('myModal');
     const closeButton = document.querySelector('.close');
     const previousButton = document.getElementById('previous');
@@ -46,6 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSectionIndex = 0;
         updateModalContent();
     });
+
+    openModalButton2.addEventListener('click', () => {
+        modal.style.display = 'block';
+        currentSectionIndex = 0;
+        updateModalContent();
+    });
+
 
     closeButton.addEventListener('click', () => {
         modal.style.display = 'none';

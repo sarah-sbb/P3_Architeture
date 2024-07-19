@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const authToken = localStorage.getItem('authToken');
     const loginLink = document.getElementById('logBtn');
     const editModeButton = document.getElementById('openModal');
+    const editModeButton2 = document.getElementById('openModal2');
 
     if (authToken) {
         loginLink.textContent = 'Logout';
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.reload(); // Recharge la page actuelle
         });
         editModeButton.style.display = 'block'; // Affiche le bouton "Mode édition"
+        editModeButton2.style.display = 'block'; // Affiche le bouton "Mode édition"
     } else {
         loginLink.textContent = 'Login';
         loginLink.href = 'login.html';
