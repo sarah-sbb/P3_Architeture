@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    addPhotoButton.addEventListener('click', async () => {
+    addPhotoButton.addEventListener('click', async (event) => {
         if (currentSectionIndex < sections.length - 1) {
             currentSectionIndex++;
             updateModalContent();
@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSectionIndex++;
             updateModalContent();
         }
-
-        // event.preventDefault();
+        event.preventDefault();
+        
 
         const modalContent = document.getElementById('modalGallery');
         const modalForm = document.getElementById('modalForm');
@@ -138,7 +138,7 @@ export function createModalProjectCard(project) {
 
     workImage.src = project.imageUrl;
     workGalleryCard.dataset.id = project.id;
-    workGalleryCard.dataset.category = project.category.name;
+    workGalleryCard.dataset.category = project?.categoryId ?? project?.category?.id;
     workGalleryCard.className = "workGalleryCard";
 
     trashCan.classList.add("fa-solid", "fa-trash-can", "trash-icon");
@@ -250,7 +250,9 @@ async function loadPhotoForm() {
                 const previewImage = document.getElementById('previewImage');
                 previewImage.src = 'assets/icons/picture.png'; // Réinitialiser l'aperçu de l'image
                 
-                closeModal(event); // Fermer la modale après soumission
+                // Fermer la modale après soumission
+                const modal = document.getElementById('myModal');
+                modal.style.display = "none";
             } catch (error) {
                 console.error('Error creating new project:', error);
             }

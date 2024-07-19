@@ -40,22 +40,13 @@ export function createProjectCard(project) {
     const workCard = document.createElement("figure");
     const workImage = document.createElement("img");
     const workTitle = document.createElement("figcaption");
-    // const trashCan = document.createElement("i");
     
     workImage.src = project.imageUrl;
     workImage.alt = project.title;
     workTitle.innerText = project.title;
     workCard.dataset.id = project.id;
-    workCard.dataset.category = project.category.name;
+    workCard.dataset.category = project?.categoryId ?? project?.category?.id;
     workCard.className = "workCard";
-
-    // Configuration de l'icône de suppression
-    //trashCan.classList.add("fa-solid", "fa-trash-can", "trash-icon");
-    // trashCan.addEventListener("click", function (e) {
-    //     e.preventDefault();
-    //     deleteProject(project.id, workCard); // Suppression dans la galerie principale
-    //     removeFromModalGallery(project.id); // Suppression dans la galerie modale
-    // });
 
     workCard.append(workImage, workTitle);
     gallery.appendChild(workCard);
@@ -105,7 +96,7 @@ function createButtonFilter(categorie, filter) {
     const button = document.createElement("button");
     button.innerText = categorie.name;
     button.className = "filterButton";
-    button.dataset.category = categorie.name;
+    button.dataset.category = categorie.id;
     filter.appendChild(button);
 }
 
