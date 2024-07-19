@@ -46,7 +46,7 @@ export function createProjectCard(project) {
     workImage.alt = project.title;
     workTitle.innerText = project.title;
     workCard.dataset.id = project.id;
-    // workCard.dataset.category = project.category.name;
+    workCard.dataset.category = project.category.name;
     workCard.className = "workCard";
 
     // Configuration de l'icône de suppression

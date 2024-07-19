@@ -1,8 +1,7 @@
 /***** MODAL *****/
 .modal-btn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	padding-top: 17px;
+	text-align: center;
 	cursor: pointer;
 }
 
@@ -47,7 +46,7 @@
 	padding: 25px;
 	border: 1px solid #888;
 	width: 630px;
-	height: 690px;
+	height: 85%;
 	/* overflow-y: scroll; */
 }
 

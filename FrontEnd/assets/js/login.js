@@ -31,3 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const authToken = localStorage.getItem('authToken');
+    const loginLink = document.getElementById('logBtn');
+    const editModeButton = document.getElementById('openModal');
+
+    if (authToken) {
+        loginLink.textContent = 'Logout';
+        loginLink.addEventListener('click', () => {
+            localStorage.removeItem('authToken');
+            window.location.reload(); // Recharge la page actuelle
+        });
+        editModeButton.style.display = 'block'; // Affiche le bouton "Mode édition"
+    } else {
+        loginLink.textContent = 'Login';
+        loginLink.href = 'login.html';
+        editModeButton.style.display = 'none'; // Masque le bouton "Mode édition"
+    }
+});
