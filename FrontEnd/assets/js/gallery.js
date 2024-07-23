@@ -74,7 +74,7 @@ function getCategories(worksData) {
     return arrayOfStrings.map(s => JSON.parse(s));
 }
 
-// Fonction pour initier les boutons de filtre
+// Fonction pour initialiser les boutons de filtre
 function categoryFilter(categories, filter) {
     const button = document.createElement("button");
     button.innerText = "Tous";

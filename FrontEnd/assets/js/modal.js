@@ -7,6 +7,7 @@ export function initModal() {
     console.log('Modal initialisée');
 }
 
+// Ouverture de la modal
 document.addEventListener('DOMContentLoaded', () => {
     const openModalButton = document.getElementById('openModal');
     const openModalButton2 = document.getElementById('openModal2');
@@ -170,7 +171,7 @@ function updateModalGallery() {
         card.remove();
     });
 
-    // Recharger la galerie modale avec les données mises à jour sa,ns fermer la fenêtre
+    // Recharger la galerie modale avec les données mises à jour sans fermer la fenêtre
     fetch(`${catchAPIurl}/works`)
         .then(response => response.json())
         .then(data => {
@@ -244,7 +245,7 @@ async function loadPhotoForm() {
                 const newProject = await createNewProject(formData);
                 addProjectToGallery(newProject); // Ajouter la nouvelle carte de projet à la galerie principale
                 
-                alert('Le projet a été ajouté avec succès, souhaitez-vous ajouter un autre projet ?');
+                alert('Le projet a été ajouté avec succès !');
                 
                 form.reset(); // Réinitialiser le formulaire après soumission
                 const previewImage = document.getElementById('previewImage');

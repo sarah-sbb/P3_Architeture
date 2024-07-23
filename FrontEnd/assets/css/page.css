@@ -5,6 +5,7 @@
 #introduction figure {
 	flex: 1
 }
+
 #introduction img {
 	display: block;
 	margin: auto;
@@ -21,9 +22,13 @@
 #introduction p {
 	margin-bottom: 0.5em;
 }
-#portfolio h2 {
-	text-align: center;
-	margin-bottom: 1em;
+
+.portoflio-header {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	justify-content: center;
+	margin-bottom: 40px;
 }
 
 .filter {
@@ -74,7 +79,9 @@ input[type="submit"], button {
 }
 
 .gallery img {
-	width: 100%;
+	width: 366.66px;
+	height: 489.27px;
+	object-fit: cover;
 
 }
 #contact {

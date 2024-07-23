@@ -37,18 +37,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginLink = document.getElementById('logBtn');
     const editModeButton = document.getElementById('openModal');
     const editModeButton2 = document.getElementById('openModal2');
+    const displayFilter = document.querySelector('.filter');
 
-    if (authToken) {
-        loginLink.textContent = 'Logout';
-        loginLink.addEventListener('click', () => {
-            localStorage.removeItem('authToken');
-            window.location.reload(); // Recharge la page actuelle
-        });
-        editModeButton.style.display = 'block'; // Affiche le bouton "Mode édition"
-        editModeButton2.style.display = 'block'; // Affiche le bouton "Mode édition"
-    } else {
-        loginLink.textContent = 'Login';
-        loginLink.href = 'login.html';
-        editModeButton.style.display = 'none'; // Masque le bouton "Mode édition"
+    if (loginLink) {
+        if (authToken) {
+            loginLink.textContent = 'Logout';
+            loginLink.addEventListener('click', () => {
+                localStorage.removeItem('authToken');
+                window.location.reload(); // Recharge la page actuelle
+            });
+        } else {
+            loginLink.textContent = 'Login';
+            loginLink.href = 'login.html';
+        }
     }
+
+    // Utilisation d'un opérateur ternaire pour simplifier la logique de style
+    if (editModeButton) editModeButton.style.display = authToken ? 'block' : 'none';
+    if (editModeButton2) editModeButton2.style.display = authToken ? 'block' : 'none';
+    if (displayFilter) displayFilter.style.display = authToken ? 'none' : 'flex';
 });

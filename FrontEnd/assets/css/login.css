@@ -13,7 +13,7 @@
 	height: 100vh;
 }
 
-.login-section, h2 {
+.login-title {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 30px;
@@ -37,6 +37,6 @@
 	margin-bottom: 20px;
 }
 
-.login-section p {
-	text-decoration: underline;
+.login-section_mdp {
+	text-align: center;
 }
